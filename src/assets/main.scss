@@ -1,0 +1,217 @@
+// https://piccalil.li/blog/a-modern-css-reset/ and https://www.joshwcomeau.com/css/custom-css-reset/
+// https://pinetools.com/lighten-color and https://pinetools.com/darken-color
+// check the IG account of https://coolors.co/
+
+// RESETS --------------------------------------------
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+* {
+  margin: 0;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  line-height: 1.5;
+  text-rendering: optimizeSpeed;
+  -webkit-font-smoothing: antialiased;
+}
+
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
+}
+
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+button {
+  cursor: pointer;
+  background: none;
+  border: none;
+  border-radius: 0;
+  outline: none;
+  padding: 0;
+}
+
+// remove list styles on ul, ol elements with a list role, which suggests default styling will be removed
+
+ul[role='list'],
+ol[role='list'] {
+  list-style: none;
+  margin: 0; // ist aus unserm list reset
+  padding: 0; // ist aus unserm list reset
+}
+
+// remove all animations, transitions and smooth scroll for people that prefer not to see them
+
+@media (prefers-reduced-motion: reduce) {
+  html:focus-within {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    scroll-behavior: auto !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+// STYLES --------------------------------------------
+
+// root
+
+:root {
+  --white: #fff;
+  --darkgray: #282828;
+  --paleorange: #fef8f4;
+
+  // gray palette
+  --darkgray20: #535353;
+  --darkgray30: #686868;
+  --darkgray50: #939393;
+  --darkgray60: #a9a9a9;
+  --darkgray75: #c9c9c9;
+  --darkgray85: #dedede;
+  --darkgray95: #f4f4f4;
+
+  // delicateblue
+  --delicateblue: #c2dae8;
+  --delicateblue50darken: #3a779a;
+  --delicateblue50: #e0ecf3;
+  --delicateblue60: #e6f0f5;
+  --delicateblue65: #e9f2f6;
+  --delicateblue75: #eff5f9;
+  --delicateblue85: #f5f9fb;
+
+  // pumicestone
+  --pumicestone: #cac2b9;
+  --pumicestone50darken: #6e6153;
+  --pumicestone50: #e4e0db;
+  --pumicestone60: #e9e6e3;
+  --pumicestone65: #ece9e6;
+  --pumicestone75: #f1efed;
+  --pumicestone85: #f7f5f4;
+
+  // pineappleslice
+  --pineappeslice: #e7d391;
+  --pineappeslice50darken: #9a7e21;
+  --pineappeslice50: #f3e9c8;
+  --pineappeslice60: #f5edd3;
+  --pineappeslice65: #f6efd8;
+  --pineappeslice75: #f9f3e3;
+  --pineappeslice85: #fbf8ee;
+
+  // pastelgreen
+  --pastelgreen: #b4d3b2;
+  --pastelgreen50darken: #497b46;
+  --pastelgreen50: #d9e9d8;
+  --pastelgreen60: #e1ede0;
+  --pastelgreen65: #e4efe4;
+  --pastelgreen75: #ecf4eb;
+  --pastelgreen85: #f3f8f3;
+
+  // blissfulblue
+  --blissfulblue: #7198bb;
+  --blissfulblue50darken: #304c65;
+  --blissfulblue50: #b7cbdd;
+  --blissfulblue60: #c6d5e3;
+  --blissfulblue65: #cddae7;
+  --blissfulblue75: #dbe5ee;
+  --blissfulblue85: #e9eff4;
+
+  // balletslipper
+  --balletslipper: #ecced5;
+  --balletslipper50darken: #9f3d54;
+  --balletslipper50: #f5e6ea;
+  --balletslipper60: #f7ebee;
+  --balletslipper65: #f8edf0;
+  --balletslipper75: #faf2f4;
+  --balletslipper85: #fcf7f8;
+
+  // error colors
+  --errorbackground: #f8d7da;
+  --errorcolor: #721c24;
+
+  // breakpoints
+  --breakpoint-mini: 360px;
+  --breakpoint-xsmall: 480px;
+  --breakpoint-small: 640px;
+  --breakpoint-small-medium: 768px;
+  --breakpoint-medium: 800px;
+  --breakpoint-large: 1024px;
+  --breakpoint-xlarge: 1200px;
+}
+
+// html
+
+html {
+  -ms-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+}
+
+// body
+
+body {
+  background-color: var(--paleorange);
+  color: var(--darkgray);
+  font-family: Helvetica, Arial, sans-serif;
+}
+
+a {
+  color: inherit;
+}
+
+// visually hidden (screenreader only)
+
+.sr-only {
+  clip: rect(0, 0, 0, 0);
+  border: 0;
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  width: 1px;
+}
+
+// display when focused (screenreader only)
+
+.sr-only-focusable {
+  &:active,
+  &:focus {
+    clip: auto;
+    height: auto;
+    margin: 0;
+    overflow: visible;
+    position: static;
+    width: auto;
+  }
+}
+
+// rest of styles TODO
+
+.svg-socialmedia {
+  color: var(--darkgray);
+  height: 42px;
+  width: auto;
+}
