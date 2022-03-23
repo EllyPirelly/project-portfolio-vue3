@@ -1,7 +1,7 @@
 <template>
-  <div class="blog">
+  <main class="blog">
     <BlogCard />
-  </div>
+  </main>
 </template>
 
 <script>

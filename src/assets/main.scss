@@ -208,7 +208,103 @@ a {
   }
 }
 
-// rest of styles TODO
+// WOBBLE css --------------------------------------------
+
+/* Wobble Horizontal */
+/* credit: https://ianlunn.github.io/Hover/# and https://github.com/IanLunn/Hover */
+@-webkit-keyframes wobble-link {
+  16.65% {
+    transform: translateX(8px);
+  }
+
+  33.3% {
+    transform: translateX(-6px);
+  }
+
+  49.95% {
+    transform: translateX(4px);
+  }
+
+  66.6% {
+    transform: translateX(-2px);
+  }
+
+  83.25% {
+    transform: translateX(1px);
+  }
+
+  100% {
+    transform: translateX(0);
+  }
+}
+
+@keyframes wobble-link {
+  16.65% {
+    transform: translateX(8px);
+  }
+
+  33.3% {
+    transform: translateX(-6px);
+  }
+
+  49.95% {
+    transform: translateX(4px);
+  }
+
+  66.6% {
+    transform: translateX(-2px);
+  }
+
+  83.25% {
+    transform: translateX(1px);
+  }
+
+  100% {
+    transform: translateX(0);
+  }
+}
+
+.wobble-link {
+  align-items: center;
+  /* box-shadow: 0 0 1px rgba(0, 0, 0, 0); */
+  display: flex;
+  font-family: 'Bitter', serif;
+  justify-content: space-between;
+  text-decoration: none;
+  /* transform: perspective(1px) translateZ(0); */
+
+  &.blog {
+    font-weight: 400;
+    margin-top: 1.15em;
+
+    @media screen and (min-width: 640px) {
+      grid-column: 2 / 3;
+      grid-row: 3 / 4;
+      align-self: end;
+    }
+  }
+}
+
+.wobble-link:hover,
+.wobble-link:focus,
+.wobble-link:active {
+  animation-name: wobble-link;
+  animation-duration: 1s;
+  animation-timing-function: ease-in-out;
+  animation-iteration-count: 1;
+}
+
+.wobble-text.blog {
+  font-size: 1.25em;
+  margin-top: 0;
+}
+
+.wobble-text.publication {
+  font-size: 1.5em;
+  margin-top: 0;
+}
+
+// REST --------------------------------------------
 
 .svg-socialmedia {
   color: var(--darkgray);
