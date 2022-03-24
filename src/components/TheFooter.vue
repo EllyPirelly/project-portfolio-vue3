@@ -1,5 +1,5 @@
 <template>
-  <footer class="footer__wrapper" id="connect">
+  <footer class="footer__wrapper main-headline" id="connect">
     <h2 class="footer__headline">Find me:</h2>
 
     <ul role="list" class="footer__socialmedia-items">

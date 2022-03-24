@@ -1,17 +1,13 @@
 <template>
-  <main class="blog">
-    <BlogCard />
-  </main>
+  <main class="blog">Blog Page Content - ToDo</main>
 </template>
 
 <script>
-import BlogCard from '../components/BlogCard.vue'
-
 export default {
   name: 'Blog',
 
   components: {
-    BlogCard,
+    //
   },
 }
 </script>

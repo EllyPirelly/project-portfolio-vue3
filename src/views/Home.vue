@@ -70,53 +70,7 @@
 
     <!-- weather -->
     <span id="weather"></span>
-    <section class="section-wrapper weather">
-      <div class="wea-container">
-        <div class="second-headline">Current weather in Berlin, Germany</div>
-        <div class="wea-info-wrapper">
-          <div class="wea-icon-desc-container">
-            <div class="wea-location">
-              <p data-location="wea-location">-</p>
-            </div>
-            <div class="wea-icon" data-icon="wea-icon">
-              <img src="../assets/img/weather-icons/unknown.png" alt="" />
-            </div>
-            <!--               <div class="wea-temp-main">
-                <p data-temp-main="wea-temp-main">- <span>- °C</span></p>
-                <span class="wea-temp-change">Click to change to °F / °C<span>
-              </div>
-              <div class="wea-desc">
-                <span data-desc="wea-desc">-</span>
-              </div> -->
-          </div>
-          <div class="wea-wind-sun-container">
-            <div class="wea-wind">
-              <span class="wea-wind-speed">
-                <p>
-                  Wind speed:
-                  <span data-wind-speed="wea-wind-speed">-</span> km/h
-                </p>
-              </span>
-              <span class="wea-wind-dir">
-                <p>
-                  Wind direction: <span data-wind-dir="wea-wind-dir">-</span>
-                </p>
-              </span>
-            </div>
-            <div class="wea-sun">
-              <span class="wea-sunrise">
-                <SvgSunrise />
-                <span data-sunrise="wea-sunrise">-</span><span>(am)</span>
-              </span>
-              <span class="wea-sunset">
-                <SvgSunset />
-                <span data-sunset="wea-sunset">-</span><span>(pm)</span>
-              </span>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
+    <WeatherCard />
 
     <!-- code -->
     <span id="code"></span>
@@ -421,25 +375,19 @@
         </a>
       </div>
     </section>
-
-    <BackToTop />
   </main>
 </template>
 
 <script>
-import SvgSunrise from '../assets/img/svg/SvgSunrise.vue'
-import SvgSunset from '../assets/img/svg/SvgSunset.vue'
 import SvgArrowRight from '../assets/img/svg/SvgArrowRight.vue'
-import BackToTop from '../components/BackToTop.vue'
+import WeatherCard from '../components/WeatherCard.vue'
 
 export default {
   name: 'Home',
 
   components: {
-    SvgSunrise,
-    SvgSunset,
     SvgArrowRight,
-    BackToTop,
+    WeatherCard,
   },
 
   data() {
@@ -451,7 +399,6 @@ export default {
 </script>
 
 <style lang="scss">
-// MAIN - general --------------------------------------------
 .main-wrapper {
   margin-bottom: 62px;
 
@@ -484,24 +431,6 @@ export default {
     padding-left: calc((100vw - 1072px) / 2);
     padding-right: calc((100vw - 1072px) / 2);
   }
-}
-
-.main-headline {
-  font-family: 'Bitter', serif;
-  font-size: 2em;
-  font-weight: 500;
-  margin-bottom: 1.15em;
-}
-
-.second-headline {
-  font-family: 'Bitter', serif;
-  font-size: 1.5em;
-  font-weight: 500;
-}
-
-.main-text {
-  font-size: 1.25em;
-  margin-top: 0.5em;
 }
 
 // CARD -------------------------------------------------
@@ -734,20 +663,6 @@ export default {
   }
 }
 
-.section-wrapper.weather {
-  @media screen and (min-width: 800px) {
-    grid-row: 7 / 8;
-  }
-}
-
-.wea-container {
-  background: linear-gradient(
-    155deg,
-    rgba(113, 152, 187, 1) 0%,
-    rgba(194, 218, 232, 1) 60%
-  );
-}
-
 /* code */
 #code {
   @media screen and (min-width: 800px) {
@@ -792,7 +707,7 @@ export default {
 .extra-content-button {
   color: var(--darkgray);
   background-color: var(--paleorange);
-  box-shadow: 0 0 10px 0 var(--darkgray);
+  box-shadow: 0 0 10px 0 var(--darkgray60);
   font-family: 'Bitter', serif;
   font-size: 1em;
   font-weight: 300;

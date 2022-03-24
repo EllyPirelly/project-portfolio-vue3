@@ -39,10 +39,4 @@ a.back-to-top__scroll {
   justify-content: center;
   padding: 0.5em;
 }
-
-.arrow-up-svg {
-  color: var(--darkgray);
-  height: 24px;
-  width: 24px;
-}
 </style>

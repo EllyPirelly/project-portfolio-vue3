@@ -2,83 +2,7 @@
 // https://pinetools.com/lighten-color and https://pinetools.com/darken-color
 // check the IG account of https://coolors.co/
 
-// RESETS --------------------------------------------
-
-*,
-*::before,
-*::after {
-  box-sizing: border-box;
-}
-
-* {
-  margin: 0;
-}
-
-html,
-body {
-  height: 100%;
-}
-
-body {
-  line-height: 1.5;
-  text-rendering: optimizeSpeed;
-  -webkit-font-smoothing: antialiased;
-}
-
-img,
-picture,
-video,
-canvas,
-svg {
-  display: block;
-  max-width: 100%;
-}
-
-input,
-button,
-textarea,
-select {
-  font: inherit;
-}
-
-button {
-  cursor: pointer;
-  background: none;
-  border: none;
-  border-radius: 0;
-  outline: none;
-  padding: 0;
-}
-
-// remove list styles on ul, ol elements with a list role, which suggests default styling will be removed
-
-ul[role='list'],
-ol[role='list'] {
-  list-style: none;
-  margin: 0; // ist aus unserm list reset
-  padding: 0; // ist aus unserm list reset
-}
-
-// remove all animations, transitions and smooth scroll for people that prefer not to see them
-
-@media (prefers-reduced-motion: reduce) {
-  html:focus-within {
-    scroll-behavior: auto;
-  }
-
-  *,
-  *::before,
-  *::after {
-    animation-duration: 0.01ms !important;
-    animation-iteration-count: 1 !important;
-    scroll-behavior: auto !important;
-    transition-duration: 0.01ms !important;
-  }
-}
-
-// STYLES --------------------------------------------
-
-// root
+// ROOT --------------------------------------------
 
 :root {
   --white: #fff;
@@ -162,23 +86,115 @@ ol[role='list'] {
   --breakpoint-xlarge: 1200px;
 }
 
-// html
+// RESETS --------------------------------------------
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+* {
+  margin: 0;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  line-height: 1.5;
+  text-rendering: optimizeSpeed;
+  -webkit-font-smoothing: antialiased;
+}
+
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
+}
+
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+button {
+  cursor: pointer;
+  background: none;
+  border: none;
+  border-radius: 0;
+  outline: none;
+  padding: 0;
+}
+
+ul, ol {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+// remove all animations, transitions and smooth scroll for people that prefer not to see them
+
+@media (prefers-reduced-motion: reduce) {
+  html:focus-within {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    scroll-behavior: auto !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+// STYLES --------------------------------------------
 
 html {
   -ms-text-size-adjust: 100%;
   -webkit-text-size-adjust: 100%;
 }
 
-// body
-
 body {
   background-color: var(--paleorange);
   color: var(--darkgray);
   font-family: Helvetica, Arial, sans-serif;
+  font-size: 16px;
+  font-weight: 300;
+  line-height: 1.45;
+  position: relative;
 }
 
 a {
   color: inherit;
+}
+
+a.link-style {
+  font-family: "Bitter", serif;
+  text-decoration: underline var(--darkgray);
+
+  &:hover {
+      background-color: var(--darkgray95);
+      text-decoration: none;
+  }
+}
+
+.hr-line {
+  border: 0;
+  border-top: 1px solid var(--darkgray);
+  display: block;
+  height: 1px;
+  margin: 1em 0;
+  padding: 0;
 }
 
 // visually hidden (screenreader only)
@@ -206,6 +222,30 @@ a {
     position: static;
     width: auto;
   }
+}
+
+.svg-socialmedia {
+  color: var(--darkgray);
+  height: 42px;
+  width: auto;
+}
+
+.main-headline {
+  font-family: 'Bitter', serif;
+  font-size: 2em;
+  font-weight: 500;
+  margin-bottom: 1.15em;
+}
+
+.second-headline {
+  font-family: 'Bitter', serif;
+  font-size: 1.5em;
+  font-weight: 500;
+}
+
+.main-text {
+  font-size: 1.25em;
+  margin-top: 0.5em;
 }
 
 // WOBBLE css --------------------------------------------
@@ -304,10 +344,174 @@ a {
   margin-top: 0;
 }
 
-// REST --------------------------------------------
+// UNDERLINE --------------------------------------------
 
-.svg-socialmedia {
-  color: var(--darkgray);
-  height: 42px;
-  width: auto;
+.main-headline,
+.blg-main-headline {
+  position: relative;
+
+  &:not(.footer):before {
+    content: "";
+    position: absolute;
+    height: 8px;
+    width: 100%;
+    top: 100%;
+  }
+}
+
+.main-headline.home:before {
+  background: repeating-linear-gradient(
+    -45deg,
+    var(--pastelgreen) 3px,
+    var(--darkgray) 3px,
+    var(--darkgray) 6px,
+    var(--pastelgreen) 6px,
+    var(--pastelgreen) 9px
+  ),
+  var(--darkgray);
+}
+
+.main-headline.about:before {
+  background: repeating-linear-gradient(
+    -45deg,
+    var(--pineappeslice) 3px,
+    var(--darkgray) 3px,
+    var(--darkgray) 6px,
+    var(--pineappeslice) 6px,
+    var(--pineappeslice) 9px
+  ),
+  var(--darkgray);
+}
+
+.main-headline.code:before {
+  background: repeating-linear-gradient(
+    -45deg,
+    var(--darkgray85) 3px,
+    var(--darkgray) 3px,
+    var(--darkgray) 6px,
+    var(--darkgray85) 6px,
+    var(--darkgray85) 9px
+  ),
+  var(--darkgray);
+}
+
+.main-headline.blog:before {
+  background: repeating-linear-gradient(
+    -45deg,
+    var(--balletslipper) 3px,
+    var(--darkgray) 3px,
+    var(--darkgray) 6px,
+    var(--balletslipper) 6px,
+    var(--balletslipper) 9px
+  ),
+  var(--darkgray);
+}
+
+.main-headline.publication:before {
+  background: repeating-linear-gradient(
+    -45deg,
+    var(--blissfulblue) 3px,
+    var(--darkgray) 3px,
+    var(--darkgray) 6px,
+    var(--blissfulblue) 6px,
+    var(--blissfulblue) 9px
+  ),
+  var(--darkgray);
+}
+
+.main-headline.under-construction:before {
+  background: repeating-linear-gradient(
+    -45deg,
+    var(--pineappeslice) 3px,
+    var(--darkgray) 3px,
+    var(--darkgray) 6px,
+    var(--pineappeslice) 6px,
+    var(--pineappeslice) 9px
+  ),
+  var(--darkgray);
+}
+
+.blg-main-headline:before {
+  background: repeating-linear-gradient(
+    -45deg,
+    var(--pineappeslice) 3px,
+    var(--darkgray) 3px,
+    var(--darkgray) 6px,
+    var(--pineappeslice) 6px,
+    var(--pineappeslice) 9px
+  ),
+  var(--darkgray);
+}
+
+.blg-main-headline.full-article:before {
+  background: repeating-linear-gradient(
+    -45deg,
+    var(--paleorange) 3px,
+    var(--darkgray) 3px,
+    var(--darkgray) 6px,
+    var(--paleorange) 6px,
+    var(--paleorange) 9px
+  ),
+  var(--darkgray);
+}
+
+// CARD OVERLAY --------------------------------------------
+
+.overlay-container {
+  box-shadow: 0 0 10px 0 var(--darkgray60);
+  position: relative;
+
+  &:hover .overlay-textcontainer {
+      height: 100%;
+  }
+}
+
+div.overlay-container {
+
+  &:not(:nth-of-type(1)) {
+      margin-top: 2em;
+  }
+
+  &:nth-of-type(2) {
+    @media screen and (min-width: 640px) {
+          margin-top: 0;
+      }
+
+      @media screen and (min-width: 800px) {
+          margin-top: 2em;
+      }
+  }
+}
+
+.overlay-img {
+  display: block;
+  width: 100%;
+}
+
+.overlay-textcontainer {
+  background-color: rgba(#fef8f4, 0.8);
+  bottom: 0;
+  height: 0;
+  left: 0;
+  overflow: hidden;
+  position: absolute;
+  right: 0;
+  transition: 0.5s ease;
+  width: 100%;
+}
+
+.overlay-text {
+  font-size: 1em;
+  left: 50%;
+  overflow: hidden;
+  padding: 0 0.6em;
+  position: absolute;
+  text-align: center;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+
+  @media screen and (min-width: 480px) {
+      font-size: 1.25em;
+  }
 }

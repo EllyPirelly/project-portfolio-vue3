@@ -76,6 +76,7 @@ import SvgSun from '../assets/img/svg/SvgSun.vue'
 
 export default {
   name: 'MainNavigation',
+
   components: {
     SvgBurger,
     SvgMoon,
