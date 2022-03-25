@@ -62,17 +62,13 @@
       >DE</a
     >
   </nav>
-
-  <!--     <div id="nav">
-      <router-link to="/">Home</router-link>
-      <router-link to="/blog">Blog</router-link>
-    </div>-->
 </template>
 
 <script>
 import SvgBurger from '../assets/img/svg/SvgBurger.vue'
 import SvgMoon from '../assets/img/svg/SvgMoon.vue'
 import SvgSun from '../assets/img/svg/SvgSun.vue'
+import { toggleClass, toggleVisibility } from '../helpers/_toggle'
 
 export default {
   name: 'MainNavigation',
@@ -84,7 +80,10 @@ export default {
   },
 
   methods: {
-    //
+    toggleMainNav() {
+      toggleClass()
+      toggleVisibility()
+    },
   },
 }
 </script>

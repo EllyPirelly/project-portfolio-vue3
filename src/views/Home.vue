@@ -331,15 +331,15 @@
           about „the galaxy life, the universe and everything“ into my blog
           section, along with general blog posts.
         </p>
-        <a
-          href="/blog/blog-overview.html"
+        <router-link
+          to="/blog-overview"
           class="wobble-link blog"
           aria-label="click to get to blog post"
           rel="noopener noreferrer"
         >
           <p class="wobble-text blog">Click here for blog posts overview</p>
           <SvgArrowRight />
-        </a>
+        </router-link>
       </div>
     </section>
 
@@ -810,5 +810,65 @@ export default {
 
 .main-text.publication {
   font-size: 1.5em;
+}
+
+// CARD OVERLAY --------------------------------------------
+
+.overlay-container {
+  box-shadow: 0 0 10px 0 var(--darkgray60);
+  position: relative;
+
+  &:hover .overlay-textcontainer {
+    height: 100%;
+  }
+}
+
+div.overlay-container {
+  &:not(:nth-of-type(1)) {
+    margin-top: 2em;
+  }
+
+  &:nth-of-type(2) {
+    @media screen and (min-width: 640px) {
+      margin-top: 0;
+    }
+
+    @media screen and (min-width: 800px) {
+      margin-top: 2em;
+    }
+  }
+}
+
+.overlay-img {
+  display: block;
+  width: 100%;
+}
+
+.overlay-textcontainer {
+  background-color: rgba(#fef8f4, 0.8);
+  bottom: 0;
+  height: 0;
+  left: 0;
+  overflow: hidden;
+  position: absolute;
+  right: 0;
+  transition: 0.5s ease;
+  width: 100%;
+}
+
+.overlay-text {
+  font-size: 1em;
+  left: 50%;
+  overflow: hidden;
+  padding: 0 0.6em;
+  position: absolute;
+  text-align: center;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+
+  @media screen and (min-width: 480px) {
+    font-size: 1.25em;
+  }
 }
 </style>

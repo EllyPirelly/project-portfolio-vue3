@@ -2,11 +2,13 @@
   <section class="section-wrapper weather">
     <div class="wea-container">
       <div class="second-headline">Current weather in Berlin, Germany</div>
+
       <div class="wea-info-wrapper">
         <div class="wea-icon-desc-container">
           <div class="wea-location">
             <p data-location="wea-location">-</p>
           </div>
+
           <div class="wea-icon" data-icon="wea-icon">
             <img src="../assets/img/weather-icons/unknown.png" alt="" />
           </div>
@@ -20,6 +22,7 @@
             <span data-desc="wea-desc">-</span>
           </div>
         </div>
+
         <div class="wea-wind-sun-container">
           <div class="wea-wind">
             <span class="wea-wind-speed">
@@ -87,7 +90,7 @@ export default {
   );
 }
 
-/* only visible if error is fetched */
+// only visible if error is fetched
 .wea-error-note {
   background-color: var(--errorbackground);
   display: none;
@@ -143,10 +146,10 @@ export default {
 }
 
 .wea-temp-main {
-  align-items: start;
+  /* align-items: start;
   display: flex;
   flex-direction: column;
-  flex-wrap: wrap;
+  flex-wrap: wrap; */
   grid-column: 2 / 4;
   justify-content: center;
   text-align: left;

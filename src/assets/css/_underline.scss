@@ -1,0 +1,108 @@
+.main-headline,
+.blg-main-headline {
+  position: relative;
+
+  &:not(.footer):before {
+    content: "";
+    height: 8px;
+    position: absolute;
+    top: 100%;
+    width: 100%;
+  }
+}
+
+.main-headline.home:before {
+  background: repeating-linear-gradient(
+    -45deg,
+    var(--pastelgreen) 3px,
+    var(--darkgray) 3px,
+    var(--darkgray) 6px,
+    var(--pastelgreen) 6px,
+    var(--pastelgreen) 9px
+  ),
+    var(--darkgray);
+}
+
+.main-headline.about:before {
+  background: repeating-linear-gradient(
+    -45deg,
+    var(--pineappeslice) 3px,
+    var(--darkgray) 3px,
+    var(--darkgray) 6px,
+    var(--pineappeslice) 6px,
+    var(--pineappeslice) 9px
+  ),
+    var(--darkgray);
+}
+
+.main-headline.code:before {
+  background: repeating-linear-gradient(
+    -45deg,
+    var(--darkgray85) 3px,
+    var(--darkgray) 3px,
+    var(--darkgray) 6px,
+    var(--darkgray85) 6px,
+    var(--darkgray85) 9px
+  ),
+    var(--darkgray);
+}
+
+.main-headline.blog:before {
+  background: repeating-linear-gradient(
+    -45deg,
+    var(--balletslipper) 3px,
+    var(--darkgray) 3px,
+    var(--darkgray) 6px,
+    var(--balletslipper) 6px,
+    var(--balletslipper) 9px
+  ),
+    var(--darkgray);
+}
+
+.main-headline.publication:before {
+  background: repeating-linear-gradient(
+    -45deg,
+    var(--blissfulblue) 3px,
+    var(--darkgray) 3px,
+    var(--darkgray) 6px,
+    var(--blissfulblue) 6px,
+    var(--blissfulblue) 9px
+  ),
+    var(--darkgray);
+}
+
+.main-headline.under-construction:before {
+  background: repeating-linear-gradient(
+    -45deg,
+    var(--pineappeslice) 3px,
+    var(--darkgray) 3px,
+    var(--darkgray) 6px,
+    var(--pineappeslice) 6px,
+    var(--pineappeslice) 9px
+  ),
+    var(--darkgray);
+}
+
+.blg-main-headline:before {
+  background: repeating-linear-gradient(
+    -45deg,
+    var(--pineappeslice) 3px,
+    var(--darkgray) 3px,
+    var(--darkgray) 6px,
+    var(--pineappeslice) 6px,
+    var(--pineappeslice) 9px
+  ),
+    var(--darkgray);
+}
+
+.blg-main-headline.full-article:before {
+  background: repeating-linear-gradient(
+    -45deg,
+    var(--paleorange) 3px,
+    var(--darkgray) 3px,
+    var(--darkgray) 6px,
+    var(--paleorange) 6px,
+    var(--paleorange) 9px
+  ),
+    var(--darkgray);
+}

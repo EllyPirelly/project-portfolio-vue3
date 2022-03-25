@@ -1,73 +1,9 @@
 <template>
-  <main class="blog">Blog Page Content - ToDo</main>
-
-  <!-- blog overview-->
   <main class="blg-wrapper">
-    <!-- sidenav -->
-    <nav class="sn-wrapper" role="navigation">
-      <!-- back to homepage -->
-      <section class="sn-back-btn">
-        <a href="/" class="sn-back-btn-container wobble-link">
-          <SvgArrowLeft />
-          <span class="sn-back-btn-text">Back to Homepage</span>
-        </a>
-      </section>
-
-      <!-- blog posts overview -->
-      <section class="sn-bp-container">
-        <a href="./blog-overview.html" class="sn-headline-link">
-          <h2 class="sn-headline">Blog Posts Overview</h2>
-        </a>
-        <div class="sn-bp-wrapper">
-          <a href="./blog-my-first-medium-article.html" class="sn-bp-link"
-            >My first Medium article<span class="sn-bp-seperator">|</span></a
-          >
-          <a href="./blog-dummy01.html" class="sn-bp-link"
-            >Lorem Dummy 01<span class="sn-bp-seperator">|</span></a
-          >
-          <a href="./blog-dummy02.html" class="sn-bp-link"
-            >Dummy Ipsum Dolor 02<span class="sn-bp-seperator">|</span></a
-          >
-          <a href="./blog-dummy03.html" class="sn-bp-link"
-            >At Verso Dummy 03<span class="sn-bp-seperator">|</span></a
-          >
-          <a href="./blog-dummy04.html" class="sn-bp-link"
-            >Accusam Dummy et 04<span class="sn-bp-seperator">|</span></a
-          >
-          <a href="./blog-dummy05.html" class="sn-bp-link"
-            >Dummy Sanctus Est 05</a
-          >
-        </div>
-      </section>
-    </nav>
-
+    <SideNavigation />
     <!-- blog entries - all snippets -->
     <section class="blg-entry-wrapper">
-      <!-- tags filtering -->
-      <section class="tagitems-container">
-        <h2 class="tagitems-headline">
-          Filter by &nbsp;
-          <SvgTag />
-        </h2>
-        <!-- tags -->
-        <div class="tagitems-wrapper" data-element="tag-filter"></div>
-        <div class="tagselectbtn-wrapper">
-          <button
-            type="button"
-            class="tagselect allselect"
-            data-button="select"
-          >
-            Select all
-          </button>
-          <button
-            type="button"
-            class="tagselect unselect"
-            data-button="unselect"
-          >
-            Unselect all
-          </button>
-        </div>
-      </section>
+      <BlogFilter />
 
       <!-- blog entry medium -->
       <article
@@ -397,18 +333,18 @@
 </template>
 
 <script>
-import SvgArrowLeft from '../assets/img/svg/SvgArrowLeft.vue'
+import BlogFilter from '../components/BlogFilter.vue'
+import SideNavigation from '../components/SideNavigation.vue'
 import SvgArrowRight from '../assets/img/svg/SvgArrowRight.vue'
-import SvgTag from '../assets/img/svg/SvgTag.vue'
 import SvgPen from '../assets/img/svg/SvgPen.vue'
 
 export default {
-  name: 'Blog',
+  name: 'BlogOverview',
 
   components: {
-    SvgArrowLeft,
+    BlogFilter,
+    SideNavigation,
     SvgArrowRight,
-    SvgTag,
     SvgPen,
   },
 
@@ -419,7 +355,204 @@ export default {
 </script>
 
 <style lang="scss">
-.blog {
-  background-color: rgb(252, 222, 212);
+.blg-quote-container {
+  margin-left: -20px;
+  padding-left: 24px;
+  box-shadow: inset 3px 0 0 0 var(--darkgray);
+  margin: 2.5em 0;
+}
+.blg-quote {
+  font-size: 1.25em;
+  font-style: italic;
+}
+
+.blg-wrapper.full-article {
+  padding: 0 1em;
+}
+
+.blg-wrapper,
+.blg-wrapper.full-article {
+  margin-top: 40px;
+
+  @media screen and (min-width: 480px) {
+    padding: 0 2em;
+  }
+
+  @media screen and (min-width: 640px) {
+    margin-top: 74px;
+    padding: 0 3em;
+  }
+
+  @media screen and (min-width: 800px) {
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 0;
+  }
+
+  @media screen and (min-width: 1200px) {
+    padding-left: calc((100vw - 1072px) / 2);
+    padding-right: calc((100vw - 1072px) / 2);
+  }
+}
+
+/* blog author */
+.blg-author-container {
+  align-items: center;
+  display: flex;
+}
+
+.blg-author-img {
+  height: 60px;
+}
+
+.blg-name-date-container {
+  font-size: 1em;
+  margin-left: 0.55em;
+}
+
+.blg-author-name {
+  display: block;
+  font-weight: 500;
+}
+
+/* blog entry */
+.blg-entry-wrapper {
+  @media screen and (min-width: 800px) {
+    flex-basis: 0;
+    flex-grow: 999;
+    margin-left: 2em;
+    margin-top: 2em;
+    min-width: 40%;
+  }
+}
+
+.blg-entry-container {
+  /* background-color: $pineappeslice; */
+  margin-top: 2em;
+  /* padding: 1em 1.5em; */
+
+  @media screen and (min-width: 800px) {
+    margin-top: 0;
+  }
+
+  &.full-article {
+    background-color: transparent;
+    padding: 0;
+  }
+
+  &.hidden {
+    display: none;
+  }
+}
+
+.blg-entry-snippet-container {
+  background-color: var(--pineappeslice);
+  padding: 1em 1.5em;
+}
+
+.blg-article-snippet-link {
+  text-decoration: none;
+}
+
+.blg-link-full-article:hover {
+  background-color: #eef2f7;
+  text-decoration: none;
+}
+
+.blg-hero-img {
+  height: 200px;
+  object-fit: cover;
+  width: 100%;
+
+  @media screen and (min-width: 640px) {
+    height: 300px;
+  }
+
+  &.full-article {
+    border: 1px solid var(--darkgray);
+
+    @media screen and (min-width: 640px) {
+      height: 300px;
+    }
+  }
+}
+
+.blg-main-headline {
+  font-family: 'Bitter', serif;
+  font-size: 2em;
+  font-weight: 500;
+  margin-bottom: 0.65em;
+
+  @media screen and (min-width: 800px) {
+    font-size: 2.5em;
+  }
+}
+
+.blg-intro,
+.blg-main-text {
+  font-size: 1.25em;
+  margin-top: 0.75em;
+}
+
+/* blog text section */
+.blg-second-img-wrapper {
+  margin-top: 1em;
+  text-align: center;
+}
+
+.blg-second-headline {
+  font-size: 1.5em;
+  font-weight: 500;
+  margin-top: 20px;
+}
+
+.blg-second-img {
+  width: 50%;
+
+  &.full-article {
+    border: 1px solid var(--darkgray);
+  }
+}
+
+.blg-img-caption {
+  display: block;
+  font-size: 1.25em;
+  font-style: italic;
+}
+
+.blg-seperator-container {
+  margin: 2em 0;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.blg-seperator-svg {
+  color: var(--darkgray);
+  height: 1.5em;
+  margin: 0 0.3em;
+}
+
+.blg-tag-container {
+  margin-top: 6px;
+}
+
+.blg-tag-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.blg-tag {
+  display: flex;
+  align-items: center;
+  font-size: 14px;
+  margin-top: 12px;
+  margin-right: 16px;
+}
+
+.blg-tag-svg {
+  color: var(--darkgray);
+  height: 1.5em;
+  margin-right: 4px;
 }
 </style>
