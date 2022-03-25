@@ -86,4 +86,140 @@ export default {
     rgba(194, 218, 232, 1) 60%
   );
 }
+
+/* only visible if error is fetched */
+.wea-error-note {
+  background-color: var(--errorbackground);
+  display: none;
+
+  & p {
+    color: var(--errorcolor);
+    text-align: center;
+  }
+}
+
+.wea-info-wrapper {
+  margin-top: 12px;
+
+  @media screen and (min-width: 640px) {
+    display: grid;
+    grid-gap: 10px;
+  }
+
+  @media screen and (min-width: 800px) {
+    display: block;
+  }
+}
+
+.wea-icon-desc-container {
+  align-items: center;
+  display: grid;
+  grid-gap: 10px;
+
+  @media screen and (min-width: 640px) {
+    grid-column: 1 / 2;
+  }
+}
+
+.wea-location {
+  background-color: var(--white);
+  grid-column: 1 / 4;
+  text-align: center;
+
+  & p {
+    font-size: 24px;
+  }
+}
+
+.wea-icon {
+  grid-column: 1 / 2;
+  text-align: center;
+
+  & img {
+    @media screen and (min-width: 360px) {
+      width: auto;
+    }
+  }
+}
+
+.wea-temp-main {
+  align-items: start;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  grid-column: 2 / 4;
+  justify-content: center;
+  text-align: left;
+
+  & p {
+    cursor: pointer;
+    font-size: 56px;
+    line-height: 1em;
+  }
+}
+
+.wea-temp-change {
+  font-size: 12px;
+}
+
+.wea-desc {
+  grid-column: 1 / 4;
+  text-align: center;
+}
+
+[data-desc='wea-desc'] {
+  text-transform: capitalize;
+}
+
+.wea-wind-sun-container {
+  display: grid;
+  grid-gap: 10px;
+  margin-top: 18px;
+
+  @media screen and (min-width: 640px) {
+    display: block;
+    grid-column: 2 / 3;
+    margin-top: 0;
+  }
+
+  @media screen and (min-width: 768px) {
+    margin-top: 18px;
+  }
+}
+
+.wea-icon-desc-container,
+.wea-wind-sun-container {
+  background: linear-gradient(
+    155deg,
+    rgba(255, 255, 255, 1) 0%,
+    rgba(255, 255, 255, 0.7) 50%,
+    rgba(255, 255, 255, 0.25) 100%
+  );
+  border-radius: 5px;
+  padding: 1em;
+}
+
+@media screen and (min-width: 640px) {
+  .wea-sun {
+    margin-top: 10px;
+  }
+}
+
+.wea-sunrise,
+.wea-sunset {
+  align-items: flex-end;
+  display: flex;
+}
+
+[data-sunrise='wea-sunrise'],
+[data-sunset='wea-sunset'] {
+  margin-right: 6px;
+}
+
+.wea-sunrise-svg,
+.wea-sunset-svg {
+  height: 35px;
+  margin-right: 8px;
+  width: auto;
+}
 </style>
