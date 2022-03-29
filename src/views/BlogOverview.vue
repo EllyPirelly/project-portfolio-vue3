@@ -1,7 +1,9 @@
 <template>
   <main class="blg-wrapper">
-    <SideNavigation />
-    <!-- blog entries - all snippets -->
+    <nav class="sn-wrapper fullarticle" role="navigation">
+      <SideNavigation />
+    </nav>
+
     <section class="blg-entry-wrapper">
       <BlogFilter />
 
@@ -85,17 +87,13 @@ export default {
   box-shadow: inset 3px 0 0 0 var(--darkgray);
   margin: 2.5em 0;
 }
+
 .blg-quote {
   font-size: 1.25em;
   font-style: italic;
 }
 
-.blg-wrapper.full-article {
-  padding: 0 1em;
-}
-
-.blg-wrapper,
-.blg-wrapper.full-article {
+.blg-wrapper {
   margin-top: 40px;
 
   @media screen and (min-width: 480px) {
@@ -119,7 +117,6 @@ export default {
   }
 }
 
-/* blog author */
 .blg-author-container {
   align-items: center;
   display: flex;
@@ -139,7 +136,6 @@ export default {
   font-weight: 500;
 }
 
-/* blog entry */
 .blg-entry-wrapper {
   @media screen and (min-width: 800px) {
     flex-basis: 0;
@@ -174,7 +170,6 @@ export default {
   text-decoration: none;
 }
 
-/* blog text section */
 .blg-second-img-wrapper {
   margin-top: 1em;
   text-align: center;

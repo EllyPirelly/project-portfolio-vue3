@@ -1,3 +1,6 @@
+<!-- TODO: figure out a way to generate dynamic blog cards to dynamically add to
+overview page -->
+
 <template>
   <article
     class="blg-entry-container"
@@ -5,8 +8,8 @@
     data-tags="life berlin catlife philosophy"
   >
     <div class="blg-entry-snippet-container">
-      <a
-        href="./blog-my-first-medium-article.html"
+      <router-link
+        to="./blog-my-first-medium-article.html"
         class="blg-article-snippet-link"
       >
         <h1 class="blg-main-headline">My first Medium article</h1>
@@ -15,8 +18,10 @@
           alt="Two Powerpuff Girls avatars of the author, overlapped by little code snippets"
           class="blg-hero-img"
         />
-      </a>
+      </router-link>
+
       <div class="fade-out-gradient"></div>
+
       <div class="blg-fade-out-container">
         <p class="blg-intro">
           Thoughts about writing and publishing my first article.
@@ -35,21 +40,22 @@
           important documenting is - but nobody wants to...
         </p>
       </div>
-      <a
-        href="./blog-my-first-medium-article.html"
+      <router-link
+        to="./blog-my-first-medium-article.html"
         class="wobble-link blog"
         aria-label="click to get to blog post"
         rel="noopener noreferrer"
       >
         <p class="wobble-text blog">Read more</p>
         <SvgArrowRight />
-      </a>
+      </router-link>
     </div>
   </article>
 </template>
 
 <script>
 import SvgArrowRight from '../assets/img/svg/SvgArrowRight.vue'
+
 export default {
   name: '',
 

@@ -1,43 +1,44 @@
 <template>
-  <nav class="sn-wrapper" role="navigation">
-    <section class="sn-back-btn">
-      <a href="/" class="sn-back-btn-container wobble-link">
-        <SvgArrowLeft />
-        <span class="sn-back-btn-text">Back to Homepage</span>
-      </a>
-    </section>
+  <div class="sn-back-btn">
+    <router-link to="/" class="sn-back-btn-container wobble-link">
+      <SvgArrowLeft />
+      <span class="sn-back-btn-text">Back to Homepage</span>
+    </router-link>
+  </div>
 
-    <section class="sn-bp-container">
-      <a href="./blog-overview.html" class="sn-headline-link">
-        <h2 class="sn-headline">Blog Posts Overview</h2>
-      </a>
+  <div class="sn-bp-container">
+    <router-link to="./blog-overview" class="sn-headline-link">
+      <h2 class="sn-headline">Blog Posts Overview</h2>
+    </router-link>
 
-      <div class="sn-bp-wrapper">
-        <a href="./blog-my-first-medium-article.html" class="sn-bp-link"
-          >My first Medium article<span class="sn-bp-seperator">|</span></a
-        >
-        <a href="./blog-dummy01.html" class="sn-bp-link"
-          >Lorem Dummy 01<span class="sn-bp-seperator">|</span></a
-        >
-        <a href="./blog-dummy02.html" class="sn-bp-link"
-          >Dummy Ipsum Dolor 02<span class="sn-bp-seperator">|</span></a
-        >
-        <a href="./blog-dummy03.html" class="sn-bp-link"
-          >At Verso Dummy 03<span class="sn-bp-seperator">|</span></a
-        >
-        <a href="./blog-dummy04.html" class="sn-bp-link"
-          >Accusam Dummy et 04<span class="sn-bp-seperator">|</span></a
-        >
-        <a href="./blog-dummy05.html" class="sn-bp-link"
-          >Dummy Sanctus Est 05</a
-        >
-      </div>
-    </section>
-  </nav>
+    <div class="sn-bp-wrapper">
+      <router-link to="./blog-my-first-medium-article" class="sn-bp-link"
+        >My first Medium article<span class="sn-bp-seperator"
+          >|</span
+        ></router-link
+      >
+      <router-link to="./blog-my-first-medium-article" class="sn-bp-link"
+        >Lorem Dummy 01<span class="sn-bp-seperator">|</span></router-link
+      >
+      <router-link to="./blog-my-first-medium-article" class="sn-bp-link"
+        >Dummy Ipsum Dolor 02<span class="sn-bp-seperator">|</span></router-link
+      >
+      <router-link to="./blog-my-first-medium-article" class="sn-bp-link"
+        >At Verso Dummy 03<span class="sn-bp-seperator">|</span></router-link
+      >
+      <router-link to="./blog-my-first-medium-article" class="sn-bp-link"
+        >Accusam Dummy et 04<span class="sn-bp-seperator">|</span></router-link
+      >
+      <router-link to="./blog-my-first-medium-article" class="sn-bp-link"
+        >Dummy Sanctus Est 05</router-link
+      >
+    </div>
+  </div>
 </template>
 
 <script>
 import SvgArrowLeft from '../assets/img/svg/SvgArrowLeft.vue'
+
 export default {
   name: '',
 

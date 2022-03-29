@@ -1,12 +1,12 @@
 <template>
   <header class="header-wrapper">
-    <a href="/" class="brand-img-container">
+    <router-link to="/" class="brand-img-container">
       <img
         class="brand-img"
         alt="Powerfuff Girls avatar of Elle"
         src="../assets/img/elle-powerpuff-500x500.png"
       />
-    </a>
+    </router-link>
     <MainNavigation />
   </header>
 </template>
@@ -16,6 +16,7 @@ import MainNavigation from './MainNavigation.vue'
 
 export default {
   name: 'TheHeader',
+
   components: {
     MainNavigation,
   },

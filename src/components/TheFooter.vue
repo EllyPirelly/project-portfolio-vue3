@@ -1,5 +1,5 @@
 <template>
-  <footer class="footer__wrapper main-headline" id="connect">
+  <footer class="footer__wrapper" id="connect">
     <h2 class="footer__headline">Find me:</h2>
 
     <ul role="list" class="footer__socialmedia-items">
@@ -96,6 +96,7 @@ import SvgTwitter from '../assets/img/svg/SvgTwitter.vue'
 
 export default {
   name: 'TheFooter',
+
   components: {
     SvgCodepen,
     SvgFacebook,
@@ -118,6 +119,7 @@ export default {
 }
 
 .footer__headline {
+  font-family: 'Bitter', serif;
   margin-bottom: auto;
   font-size: 1.25em;
   font-weight: 500;

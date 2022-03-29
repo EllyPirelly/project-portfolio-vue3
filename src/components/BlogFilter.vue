@@ -1,6 +1,6 @@
 <template>
   <section class="tagitems-container">
-    <h2 class="tagitems-headline">Filter by &nbsp;<SvgTag /></h2>
+    <h3 class="tagitems-headline">Filter by &nbsp;<SvgTag /></h3>
 
     <div class="tagitems-wrapper" data-element="tag-filter">
       TODO: dynamically rendered tags

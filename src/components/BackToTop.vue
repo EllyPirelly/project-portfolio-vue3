@@ -1,6 +1,6 @@
 <template>
-  <div class="back-to-top">
-    <a class="back-to-top__scroll" href="#top" data-link title="back to top">
+  <div class="back-to-top__container">
+    <a href="#top" class="back-to-top__scroll" data-link title="back to top">
       <SvgArrowUp />
     </a>
   </div>
@@ -19,18 +19,18 @@ export default {
 </script>
 
 <style lang="scss">
-.back-to-top {
-  bottom: 28px;
+.back-to-top__container {
   display: none;
-  position: fixed;
-  right: 28px;
 
   @media screen and (min-width: 768px) {
     display: inline-block;
+    bottom: 28px;
+    position: fixed;
+    right: 28px;
   }
 }
 
-a.back-to-top__scroll {
+.back-to-top__scroll {
   align-items: center;
   background-color: var(--blissfulblue85);
   border: 1px solid var(--blissfulblue);
